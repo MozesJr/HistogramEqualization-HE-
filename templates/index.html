@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram Enhancement</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h2>Processed Images</h2>
+    <table border="1">
+        <tr>
+            <th>Original</th>
+            <th>Processed</th>
+            <th>Histogram</th>
+            <th>Action</th>
+        </tr>
+        <tbody id="imageTable"></tbody>
+    </table>
+
+    <h2>Upload Image for Enhancement</h2>
+    <input type="file" id="fileInput">
+    <select id="method">
+        <option value="HE">Histogram Equalization</option>
+        <option value="AHE">Adaptive Histogram Equalization</option>
+        <option value="CLAHE">CLAHE</option>
+    </select>
+    <button onclick="uploadImage()">Process</button>
+    <div id="output">
+        <h3>Original Image</h3>
+        <img id="originalImg" src="" alt="" style="max-width: 250px;">
+        <h3>Processed Image</h3>
+        <img id="processedImg" src="" alt="" style="max-width: 250px;">
+        <h3>Histogram</h3>
+        <img id="histogramImg" src="" alt="" style="max-width: 350px;">
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
